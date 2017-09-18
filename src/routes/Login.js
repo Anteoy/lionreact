@@ -6,7 +6,7 @@ import styles from './Login.css';
 function Login() {
   return (
     <div className={styles.normal}>
-      {/*extra={<PnoteIndex />}*/}
+      {/* extra={<PnoteIndex />}*/}
       test
     </div>
   );
