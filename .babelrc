@@ -1,0 +1,10 @@
+[
+  {
+    "libraryName": "antd",
+    "libraryDirectory": "lib",
+    "style": "css"
+  },
+  {
+    "libraryName": "antd-mobile"
+  }
+]
