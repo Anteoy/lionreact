@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { routerRedux } from 'dva/router';
-import { Toast } from 'antd-mobile';
+// import { Toast } from 'antd-mobile';
 import { plogin } from '../services/login';
 
 export default {
@@ -29,24 +29,6 @@ export default {
         return { ...state, backURL };
       }
       return { ...state, backURL };
-    },
-    setStuInfoStatus(state, { stuInfoStatus }) {
-      // alert('setStuInfoStatus' + '     ' + JSON.stringify( { ...state, stuInfoStatus }));
-      return { ...state, stuInfoStatus };
-    },
-    setUser(state, { user, stuInfoStatus, orderId, source = 1, payFlag = 1 }) {
-      const newUser = { ...state.user, ...user };
-      let newState = { ...state, user: newUser, grade: newUser.grade_id, phone: newUser.phone, stuInfoStatus };
-      if (orderId) {
-        newState = { ...newState, orderId };
-      }
-      if (source) {
-        newState = { ...newState, source };
-      }
-      if (payFlag) {
-        newState = { ...newState, payFlag };
-      }
-      return newState;
     },
     init(state) {
       try {
@@ -124,18 +106,18 @@ export default {
         console.log(err);
         console.log(res);
         query.dispatch(routerRedux.push('/pnote_home'));
-        Toast.hide();
+        // Toast.hide();
       } catch (e) {
         console.log(e);
         callback();
-        yield put({
-          type: 'toast/showToast',
-          err: {
-            type: 'fail',
-            content: `${e.toString()}`,
-            duration: 3,
-          },
-        });
+        // yield put({
+        //   type: 'toast/showToast',
+        //   err: {
+        //     type: 'fail',
+        //     content: `${e.toString()}`,
+        //     duration: 3,
+        //   },
+        // });
       }
     },
   },

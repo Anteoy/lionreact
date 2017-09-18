@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'dva';
 import styles from './Login.css';
+// import PnoteIndex from '../components/login/Login';
 
 function Login() {
   return (
     <div className={styles.normal}>
-      Route Component: Login
+      {/*extra={<PnoteIndex />}*/}
+      test
     </div>
   );
 }
