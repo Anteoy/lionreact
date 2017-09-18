@@ -4,7 +4,7 @@ import './index.css';
 // 1. Initialize
 const app = dva();
 
-app.model(require("./models/login"));
+app.model(require('./models/login'));
 
 // 2. Plugins
 // app.use({});
