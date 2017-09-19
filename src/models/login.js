@@ -84,28 +84,17 @@ export default {
      * @param call
      * @param put
      */
-    *loginp({ query, _pathname, callback }, { call, put, select }) {
+    *loginp({ query, _pathname, callback }, { call, put }) {
       try {
         console.log('model login.js...');
-        let source = 1;
-        const { routeQuery } = yield select(({ routing, login }) => {
-          return {
-            pathname: routing.locationBeforeTransitions.pathname.pathname,
-            backURL: login.backURL,
-            routeQuery: routing.locationBeforeTransitions.query,
-          };
-        });
-        if (routeQuery.region === 'region') {
-          source = 2;
-        }
+        console.log(query);
         yield put({ type: 'loading', loading: true });
         const { err, data: res } = yield call(plogin, {
           ...query,
-          source,
         });
         console.log(err);
         console.log(res);
-        query.dispatch(routerRedux.push('/pnote_home'));
+        // query.dispatch(routerRedux.push('/pnote_home'));
         // Toast.hide();
       } catch (e) {
         console.log(e);
