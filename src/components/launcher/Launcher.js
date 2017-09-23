@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import { Button } from 'antd';
-import styles from './Lancher.css';
+import styles from './Launcher.css';
 
 class PnoteLancher extends React.Component {
   state = {
