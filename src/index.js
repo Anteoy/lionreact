@@ -5,6 +5,7 @@ import './index.css';
 const app = dva();
 
 app.model(require('./models/login'));
+app.model(require('./models/mlauncher'));
 
 // 2. Plugins
 // app.use({});

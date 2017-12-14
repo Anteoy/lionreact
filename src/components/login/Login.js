@@ -39,12 +39,13 @@ class PnoteIndex extends React.Component {
     // Toast.loading('正在登录中···', 0);
     console.info(username)
     console.info(passwd)
+    console.info(dispatch)
     dispatch({
       type: 'login/loginp',
       query: {
         user_name: username,
-        pass_word: passwd
-        // dispatch,
+        pass_word: passwd,
+        dispatch,
       },
       _pathname: location.pathname,
       // callback() {

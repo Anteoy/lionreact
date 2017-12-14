@@ -7,75 +7,10 @@ export default {
   namespace: 'login',
   state: {
     token: '',
-    phone: '',
-    grade: '',
-    stuInfoStatus: -10000,
-    user: {},
-    source: 1,
-    orderId: '',
-    backURL: '',
-    payFlag: 1,
   },
   reducers: {
-    setBackURL(state, { backURL = '' }) {
-      if (
-        backURL !== '/' &&
-        backURL !== '/login' &&
-        backURL !== '/RestPwd' &&
-        backURL !== '/entering'
-      ) {
-        console.warn('回调路由: ', backURL);
-        // alert('setBackURL' + '     ' + JSON.stringify({ ...state, backURL }));
-        return { ...state, backURL };
-      }
-      return { ...state, backURL };
-    },
-    init(state) {
-      try {
-        const newState = {
-          ...state,
-          token: '',
-          phone: '',
-          grade: '',
-          user: {},
-          orderId: '',
-          source: 1,
-          stuInfoStatus: -10000,
-          payFlag: 1,
-        };
-        return newState;
-      } catch (e) {
-        return {
-          ...state,
-          token: '',
-          phone: '',
-          grade: '',
-          user: {},
-          orderId: '',
-          source: 1,
-          stuInfoStatus: -10000,
-          payFlag: 1,
-        };
-      }
-    },
   },
   effects: {
-    *goBack({ pathname }, { select, put }) {
-      const { backURL, query } = yield select(({ login, routing: { locationBeforeTransitions = {} } }) => ({
-        backURL: login.backURL,
-        query: locationBeforeTransitions.query,
-      }));
-      // 回调路由
-      if (backURL && pathname !== backURL) {
-        yield put({ type: 'setBackURL', backURL: '' });
-        yield put(routerRedux.replace({
-          pathname: backURL,
-          query,
-        }));
-      } else {
-        yield put({ type: 'setBackURL', backURL: '' });
-      }
-    },
     /**
      * login
      * @param query
@@ -94,7 +29,11 @@ export default {
         });
         console.log(err);
         console.log(res);
-        // query.dispatch(routerRedux.push('/pnote_home'));
+        if (res.code === '200' && res.message === '登录成功') {
+          console.log('开始outside dispatch ,inside is put');
+          localStorage.setItem('token', res.token)
+          query.dispatch(routerRedux.push('/launcher'));
+        }
         // Toast.hide();
       } catch (e) {
         console.log(e);
@@ -111,5 +50,18 @@ export default {
     },
   },
   subscriptions: {
+    setup({ dispatch, history }) {
+      return history.listen(({ pathname, query }) => {
+        if (pathname === '/') {
+          console.log('111111111111');
+          console.log(localStorage.getItem('token'))
+          return;
+        }
+        const isLogin = localStorage.getItem('token');
+        if (!isLogin) {
+          dispatch(routerRedux.push('/'));
+        }
+      });
+    },
   },
 };
