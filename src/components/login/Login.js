@@ -73,14 +73,14 @@ class PnoteIndex extends React.Component {
 
         <div className="top-nav">
           <ul>
-            <li><a href="/" >Index</a></li>
-            <li><a href="/blog.html" >Blog</a></li>
-            <li><a href="/archive.html">Date</a></li>
-            <li><a href="/classify.html" >Classify</a></li>
-            <li><a href="/pages/about.html" >About</a></li>
-            <li><a href="/pnotelogin.html" className="on-sel">Pnote</a></li>
+            {/*<li><a href="/" >Index</a></li>*/}
+            {/*<li><a href="/blog.html" >Blog</a></li>*/}
+            {/*<li><a href="/archive.html">Date</a></li>*/}
+            {/*<li><a href="/classify.html" >Classify</a></li>*/}
+            {/*<li><a href="/pages/about.html" >About</a></li>*/}
+            {/*<li><a href="/pnotelogin.html" className="on-sel">Pnote</a></li>*/}
 
-            <li><a href="https://github.com/Anteoy/liongo">github</a></li>
+            {/*<li><a href="https://github.com/Anteoy/liongo">github</a></li>*/}
 
           </ul>
         </div>
@@ -98,7 +98,7 @@ class PnoteIndex extends React.Component {
                 <input type="checkbox" className={styles.loginRember} /> <span className={styles.loginRemberWord}>记住密码</span>
               </div>
               <div className={styles.loginBtn} id="commit" >
-                登&nbsp录
+                {/*登 录*/}
               </div>
               <Button onClick={this.handleSubmit} type="primary">登录</Button>
             </div>
@@ -106,7 +106,7 @@ class PnoteIndex extends React.Component {
         </div>
         <div id="footer">
           <div id="footer-inner">
-            <p id="copyright">Copyright (c) 2016 - 2017 owner of copyright &nbsp;
+            <p id={styles.copyright}>Copyright (c) 2016 - 2017 owner of copyright &nbsp;
               Powered by <a href="https://github.com/Anteoy/liongo">liongo lionreact</a>
             </p>
           </div>

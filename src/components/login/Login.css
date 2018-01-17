@@ -69,3 +69,30 @@
 .main {
   background-color: #1d1f21
 }
+
+#copyright {
+  color: white;
+  margin-top: 80px;
+  padding-bottom: 20px;
+  text-align: center;
+  /*color: #f0f0f0;*/
+  font-size: 12px;
+  text-transform: none;
+  /*下边缘并居中*/
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+}
+
+.main_container {
+  position:absolute;
+  width:500px;
+  height:220px;
+  top:40%;
+  left:60%;
+  margin-left:-250px;
+  height: 20px;
+  z-index:1000;
+  color: white;
+}
