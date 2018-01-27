@@ -57,9 +57,16 @@ class PnoteLancher extends React.Component {
     const { title, content } = this.state;
     return (
     <div >
-      <div ><input id="title" value={title} onChange={this.titleChagne} placeholder="标题" /></div>
-      <div ><textarea id="content" value={content} onChange={this.contentChagne} rows="60" cols="200" placeholder="正文"></textarea></div>
-      <div ><Button onClick={this.handleSubmit} >提交</Button></div>
+      <div className={styles.title}><input id="title" className={styles.center} value={title} onChange={this.titleChagne} placeholder="标题" /></div>
+      <div className={styles.content}><textarea id="content" value={content} onChange={this.contentChagne} rows="41" cols="140" placeholder="正文"></textarea></div>
+      <div className={styles.commit}><Button onClick={this.handleSubmit} >作为博客上传</Button>&nbsp;&nbsp;<Button onClick={this.handleSubmit} >作为pnote上传</Button></div>
+      <div id="footer">
+        <div id="footer-inner">
+          <p id={styles.copyright}>Copyright (c) 2016 - 2017 owner of copyright &nbsp;
+            Powered by <a href="https://github.com/Anteoy/liongo">liongo lionreact</a>
+          </p>
+        </div>
+      </div>
     </div>
     );
   }
