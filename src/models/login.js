@@ -32,7 +32,7 @@ export default {
         if (res.code === '200' && res.message === '登录成功') {
           console.log('开始outside dispatch ,inside is put');
           localStorage.setItem('token', res.token)
-          query.dispatch(routerRedux.push('/launcher'));
+          query.dispatch(routerRedux.push('/jump'));
         }
         // Toast.hide();
       } catch (e) {

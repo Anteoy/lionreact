@@ -6,6 +6,7 @@ const app = dva();
 
 app.model(require('./models/login'));
 app.model(require('./models/mlauncher'));
+app.model(require('./models/delete'));
 
 // 2. Plugins
 // app.use({});

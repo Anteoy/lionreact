@@ -1,9 +1,10 @@
 import request from '../utils/request';
 
-export async function plogin(data) {
-  console.log('plogin,.....');
+export async function deletersvc(data) {
+  console.log('deletersvc,.....');
+  data.token = localStorage.getItem('token');
   console.log(JSON.stringify(data));
-  return request('https://anteoy.site/loginR', {
+  return request('https://anteoy.site/delete_blog', {
     method: 'POST',
     headers: {
       Accept: 'application/json',

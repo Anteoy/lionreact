@@ -1,0 +1,45 @@
+.title {
+  margin-top: 20%;
+  width: 100%;
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center {
+  width: 50%;
+  height: 30px;
+  text-align:center;
+}
+
+.content {
+  margin-top: 10px;
+  width: 100%;
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.commit {
+  margin-top: 10px;
+  width: 100%;
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+#copyright {
+  color: white;
+  margin-top: 80px;
+  padding-bottom: 20px;
+  text-align: center;
+  /*color: #f0f0f0;*/
+  font-size: 12px;
+  text-transform: none;
+  /*下边缘并居中*/
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+}

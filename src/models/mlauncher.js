@@ -1,14 +1,18 @@
 /* eslint-disable max-len */
 import { routerRedux } from 'dva/router';
 // import { Toast } from 'antd-mobile';
-import { launcher } from '../services/launcher';
+import { launcher,getsvc } from '../services/launcher';
 
 export default {
   namespace: 'mlauncher',
   state: {
-    token: '',
+    title: '',
+    content: '',
   },
   reducers: {
+    getRs(state, { payload: { content } }) {
+      return { ...state, content };
+    },
   },
   effects: {
     /**
@@ -39,6 +43,29 @@ export default {
       } catch (e) {
         console.log(e);
         callback();
+      }
+    },
+    *launcherget({ query, _pathname, callback }, { call, put }) {
+      try {
+        yield put({ type: 'loading', loading: true });
+        const { err, data: res } = yield call(getsvc, {
+          ...query,
+        });
+        console.log(err);
+        console.log(res);
+        if (res.code === '200' && res.message === '获取成功') {
+          alert('获取成功');
+          const tmp = JSON.stringify(res)
+          console.log("333333:"+ tmp)
+          yield put({ type: 'getRs', payload: { content: res.data } })
+          // callback(res, query.b)
+          return res;
+        }else{
+          alert(JSON.stringify(res))
+        }
+        // Toast.hide();
+      } catch (e) {
+        console.log(e);
       }
     },
   },
