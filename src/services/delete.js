@@ -5,7 +5,7 @@ export async function deletersvc(data) {
   console.log('deletersvc,.....');
   data.token = localStorage.getItem('token');
   console.log(JSON.stringify(data));
-  return request(`${config.server_addr}/delete_blog`, {
+  return request(data.flag === 1 ? `${config.server_addr}/delete_blog` : `${config.server_addr}/delete_pnote`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',

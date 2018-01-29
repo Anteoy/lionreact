@@ -18,7 +18,7 @@ export async function launcher(data) {
 export async function getsvc(data) {
   data.token = localStorage.getItem('token');
   console.log(JSON.stringify(data));
-  return request(`${config.server_addr}/get_blog`, {
+  return request(data.flag === 1 ? `${config.server_addr}/get_blog` : `${config.server_addr}/get_pnote`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
