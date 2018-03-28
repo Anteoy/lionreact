@@ -92,7 +92,7 @@ class PnoteIndex extends React.Component {
                 <input value={username} onChange={this.usernameChagne} placeholder="用户名" type="text" />
               </div>
               <div >
-                <input type="text" value={passwd} onChange={this.pwdChagne} placeholder="密码" />
+                <input type="password" value={passwd} onChange={this.pwdChagne} placeholder="密码" />
               </div>
               <div >
                 <input type="checkbox" className={styles.loginRember} /> <span className={styles.loginRemberWord}>记住密码</span>
