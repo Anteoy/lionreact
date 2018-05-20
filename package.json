@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=local && roadhog server ",
-    "build": "NODE_ENV=online && roadhog build ",
+    "start": "export NODE_ENV=local && roadhog server ",
+    "build": "export NODE_ENV=online && roadhog build ",
     "lint": "eslint --ext .js src test",
     "precommit": "npm run lint"
   },

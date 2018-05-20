@@ -33,6 +33,8 @@ export default {
           console.log('开始outside dispatch ,inside is put');
           localStorage.setItem('token', res.token)
           query.dispatch(routerRedux.push('/jump'));
+        }else {
+          alert(res.message);
         }
         // Toast.hide();
       } catch (e) {
