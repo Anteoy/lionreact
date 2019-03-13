@@ -4,7 +4,7 @@ const config = {
     server_addr: 'http://localhost:8080',
   },
   online: {
-    server_addr: 'https://www.anteoy.site',
+    server_addr: 'https://www.allocmem.com',
   },
 };
 module.exports = config[ENV];
